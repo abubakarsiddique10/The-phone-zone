@@ -8,7 +8,7 @@ const loadMobilePhones = () => {
 }
 // show mobile data in website
 const showMobilePhones = (getAllPhone) => {
-    const phones = getAllPhone.slice(0, 2)
+    const phones = getAllPhone.slice(0, 3)
     /*  console.log(phones) */
     const addColumn = document.getElementById('add-column');
     addColumn.textContent = '';
@@ -62,7 +62,8 @@ const displayDeatails = (phone) => {
     div2.classList.add('col-7');
     div2.innerHTML = `
         <div class="card h-100">
-            <div class="card-body">
+            <div class="card-body p-4">
+            <h3>Product details of ${phone.name}</h3>
                 <div>
                     <h5 class="card-title">Main Features</h5>
                     <div>
@@ -70,10 +71,36 @@ const displayDeatails = (phone) => {
                             <li><span class="fw-bold me-2">Chip Set :</span>${phone.mainFeatures.chipSet}</li>
                             <li><span class="fw-bold me-2">Display Size  :</span>${phone.mainFeatures.displaySize}</li>
                             <li><span class="fw-bold me-2">Memor :</span>${phone.mainFeatures.memory}</li>
+                            <li><span class="fw-bold me-2">Storage :</span>${phone.mainFeatures.storage}</li>
                         </ul>
                     </div>
                 </div>
-                <p class="card-text">This is a short card.</p>
+                <div>
+                    <h5 class="card-title">Sensors</h5>
+                    <div>
+                        <ul>
+                            <li>${phone.mainFeatures.sensors[0]}</li>
+                            <li>${phone.mainFeatures.sensors[1]}</li>
+                            <li>${phone.mainFeatures.sensors[2]}</li>
+                            <li>${phone.mainFeatures.sensors[3]}</li>
+                            <li>${phone.mainFeatures.sensors[4]}</li>
+                            <li>${phone.mainFeatures.sensors[5]}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="card-title">Others</h5>
+                    <div>
+                        <ul>
+                            <li><span class="fw-bold me-2">Bluetooth :</span>${phone?.others?.Bluetooth}</li>
+                            <li><span class="fw-bold me-2">GPS  :</span>${phone?.others?.GPS}</li>
+                            <li><span class="fw-bold me-2">Bluetooth :</span>${phone?.others?.NFC}</li>
+                            <li><span class="fw-bold me-2">GPS  :</span>${phone?.others?.Radio}</li>
+                            <li><span class="fw-bold me-2">Bluetooth :</span>${phone?.others?.USB}</li>
+                            <li><span class="fw-bold me-2">GPS  :</span>${phone?.others?.WLAN}</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     `;
