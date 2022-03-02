@@ -11,3 +11,19 @@ ul li {
     font-weight: 500;
     font-size: 15px;
 }
+#error {
+    top: 95%;
+    left: 15%;
+    color: red;
+    display: none;
+}
+.see-more-btn {
+    margin: auto;
+}
+
+#spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
+}
