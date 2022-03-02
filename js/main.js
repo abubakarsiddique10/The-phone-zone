@@ -20,7 +20,7 @@ const showMobilePhones = (getAllPhone) => {
         document.getElementById('error').style.display = 'block';
     }
     else {
-        document.getElementById('error').style.display = 'none'
+        document.getElementById('error').style.display = 'none';
         const phones = getAllPhone.slice(0, 20);
         const addColumn = document.getElementById('add-column');
         addColumn.textContent = '';
@@ -40,6 +40,7 @@ const showMobilePhones = (getAllPhone) => {
             </div>
         `;
             addColumn.appendChild(div);
+            document.getElementById('see-more-btn').style.display = 'block';
         })
     }
     document.getElementById('spinner').style.display = 'none';
@@ -51,11 +52,11 @@ const getPhoneDetails = (slug) => {
         .then(res => res.json())
         .then(data => displayDeatails(data.data))
 }
-// display every moblie phone details
+// display every single moblie phone details
 const displayDeatails = (phone) => {
-    /* console.log(phone) */
     const showDetails = document.getElementById('show-details');
     showDetails.textContent = '';
+    // create left column of phone details
     const div1 = document.createElement('div');
     div1.classList.add('col-lg-5');
     div1.classList.add('col-12');
@@ -71,6 +72,7 @@ const displayDeatails = (phone) => {
             </div>
         </div>
     `;
+    // creat right column of phone details
     const div2 = document.createElement('div');
     div2.classList.add('col-lg-7');
     div2.classList.add('col-12')

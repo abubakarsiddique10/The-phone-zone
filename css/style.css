@@ -17,13 +17,12 @@ ul li {
     color: red;
     display: none;
 }
-.see-more-btn {
-    margin: auto;
-}
-
 #spinner {
     position: absolute;
     top: 50%;
     left: 50%;
+    display: none;
+}
+#see-more-btn {
     display: none;
 }
